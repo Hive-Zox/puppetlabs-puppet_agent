@@ -2,7 +2,7 @@
 class puppet_agent::osfamily::suse {
   assert_private()
 
-  if $facts['os']['name'] != 'SLES' {
+  if $facts['os']['name'] != 'SLES' or $facts['os']['name'] != 'openSUSE' {
     fail("${facts['os']['name']} not supported")
   }
 
